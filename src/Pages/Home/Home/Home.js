@@ -1,5 +1,7 @@
 import React from 'react';
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import Products from '../Products/Products';
 import Navigation from '../Shared/Navigation/Navigation';
 
 
@@ -9,7 +11,9 @@ const Home = () => {
         <div>
             <Navigation></Navigation>
             <Header></Header>
-            <h3>Home</h3>
+            <Products></Products>
+            <Footer></Footer>
+
         </div>
     );
 };

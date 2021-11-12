@@ -7,9 +7,11 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
-const Product = ({ product }) => {
 
-    const { name, img, description, price } = product;
+
+const ExploreProduct = ({ exploreProduct }) => {
+
+    const { name, img, description, price } = exploreProduct;
 
     return (
         <Card sx={{ maxWidth: 345 }}>
@@ -43,4 +45,4 @@ const Product = ({ product }) => {
     );
 };
 
-export default Product;
+export default ExploreProduct;

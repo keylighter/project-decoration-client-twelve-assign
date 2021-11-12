@@ -11,6 +11,9 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider/AuthProvider';
 import Register from './Pages/Login/Register/Register';
+import ExploreProducts from './Pages/ExploreProducts/ExploreProducts/ExploreProducts';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -29,6 +32,13 @@ function App() {
             </Route>
             <Route path='/register'>
               <Register></Register>
+            </Route>
+            <Route path='/exploreproduct'>
+              <ExploreProducts></ExploreProducts>
+            </Route>
+
+            <Route path='/place-order'>
+              <PlaceOrder></PlaceOrder>
             </Route>
           </Switch>
         </Router>

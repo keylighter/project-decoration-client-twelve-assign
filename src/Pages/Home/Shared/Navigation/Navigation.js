@@ -33,6 +33,9 @@ const Navigation = () => {
                     <NavLink style={{ textDecoration: 'none', color: 'white' }} to='/home'>
                         <Button color="inherit">Home</Button>
                     </NavLink>
+                    <NavLink style={{ textDecoration: 'none', color: 'white' }} to='/exploreproduct'>
+                        <Button color="inherit">Explore Products</Button>
+                    </NavLink>
 
                     {
                         !user?.email ?
@@ -42,9 +45,16 @@ const Navigation = () => {
 
                             <Box>
 
+
+
                                 <NavLink style={{ textDecoration: 'none', color: 'white' }} to='/dashboard'>
                                     <Button color="inherit">Dashboard</Button>
                                 </NavLink>
+
+                                {/* <Typography variant="h6"  >
+                                    {user.name}
+                                </Typography> */}
+
 
                                 <Button
                                     onClick={logOut}
@@ -52,6 +62,14 @@ const Navigation = () => {
                             </Box>
 
                     }
+
+                    {/* {
+                        user.email &&
+                        <Typography variant="h6"  >
+                            {user.name}
+                        </Typography>
+                    } */}
+
                 </Toolbar>
             </AppBar>
         </Box>
