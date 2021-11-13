@@ -108,7 +108,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://lit-plains-82210.herokuapp.com/users', {
             //sending data thats why POST
             method: method,
             headers: {
