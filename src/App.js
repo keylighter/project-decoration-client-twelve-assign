@@ -14,6 +14,8 @@ import Register from './Pages/Login/Register/Register';
 import ExploreProducts from './Pages/ExploreProducts/ExploreProducts/ExploreProducts';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder/PlaceOrder';
+import Notfound from './Pages/Notfound/Notfound';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -37,8 +39,14 @@ function App() {
               <ExploreProducts></ExploreProducts>
             </Route>
 
-            <Route path='/place-order'>
+            <PrivateRoute path='/place-order'>
               <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
+            <PrivateRoute path='/dashboard'>
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+            <Route path='*'>
+              <Notfound></Notfound>
             </Route>
           </Switch>
         </Router>

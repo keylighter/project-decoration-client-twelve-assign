@@ -16,7 +16,7 @@ const PlaceOrder = () => {
 
     const { user } = useAuth();
 
-    const primaryInfo = { userName: user.displayName, email: user.email, phone: '' };
+    const primaryInfo = { userName: user.displayName, email: user.email, phone: '', productName: 'Classic Neon' };
 
     const [orderInfo, setOrderInfo] = useState(primaryInfo);
 
@@ -31,8 +31,23 @@ const PlaceOrder = () => {
     };
 
     const handleOrderSubmit = e => {
+        const order = {
+            ...orderInfo,
 
-
+        }
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('Your Order is Taken');
+                }
+            });
         e.preventDefault();
     }
 
@@ -58,6 +73,22 @@ const PlaceOrder = () => {
                                     id="outlined-size-small"
                                     name='userName'
                                     defaultValue={user.displayName}
+                                    size="small"
+                                    onBlur={handleOnBlur}
+                                />
+
+
+
+                            </Grid>
+                            <Grid item xs={12}>
+
+                                <TextField
+
+                                    sx={{ width: '35%', m: 1 }}
+                                    // label=""
+                                    id="outlined-size-small"
+                                    name='productName'
+                                    defaultValue='ex- Classic Neon'
                                     size="small"
                                     onBlur={handleOnBlur}
                                 />
