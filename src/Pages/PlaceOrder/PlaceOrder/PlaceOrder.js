@@ -35,7 +35,7 @@ const PlaceOrder = () => {
             ...orderInfo,
 
         }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://lit-plains-82210.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

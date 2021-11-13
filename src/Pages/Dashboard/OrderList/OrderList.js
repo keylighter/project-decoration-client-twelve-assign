@@ -18,7 +18,7 @@ const OrderList = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/orders?email=${user.email}`, {})
+        fetch(`https://lit-plains-82210.herokuapp.com/orders?email=${user.email}`, {})
             .then(res => res.json())
             .then(data => setOrderList(data));
     }, [])

@@ -21,6 +21,8 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+
+                saveUser(email, userName, 'POST');
                 const destination = location?.state?.form || '/';
                 history.replace(destination);
                 setAuthError('');
@@ -69,7 +71,7 @@ const useFirebase = () => {
                 history.replace(destination);
 
                 setAuthError('');
-
+                saveUser(user.email, user.displayName, 'PUT');
             }).catch((error) => {
                 setAuthError(error.message);
             }).finally(() => setIsLoading(false));
@@ -103,10 +105,26 @@ const useFirebase = () => {
     }
 
 
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+
+        fetch('http://localhost:5000/users', {
+            //sending data thats why POST
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        //show the data in UI
+    }
+
+
     return {
         user,
         isLoading,
         authError,
+        setUser,
         registerUser,
         loginUser,
         signInWithGoogle,

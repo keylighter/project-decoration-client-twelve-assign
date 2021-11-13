@@ -23,6 +23,7 @@ import {
 } from "react-router-dom";
 import { Button } from '@mui/material';
 import DashboardHome from '../DashboardHome/DashboardHome';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 
 
@@ -45,6 +46,7 @@ function Dashboard(props) {
             <Divider />
             <Link to="/exploreproduct"><Button color="inherit">Explore Products</Button></Link>
             <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
+            <Link to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
             {/* {admin && <Box>
                 <Link to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
                 <Link to={`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
@@ -137,6 +139,9 @@ function Dashboard(props) {
                 <Switch>
                     <Route exact path={path}>
                         <DashboardHome></DashboardHome>
+                    </Route>
+                    <Route path={`${path}/makeAdmin`}>
+                        <MakeAdmin></MakeAdmin>
                     </Route>
                     {/* <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
